@@ -393,7 +393,6 @@ function printMedicineClaims(){
       ${printMetaCard('Claim Records',String(rows.length))}
       ${printMetaCard('Beneficiaries',String(new Set(rows.map(r=>r.ben)).size))}
       ${printMetaCard('Total Quantity',String(rows.reduce((a,r)=>a+(Number(r.qty)||0),0)))}
-      ${printMetaCard('Boxes',String(rows.filter(r=>r.type==='Box').length))}
     </div>
     <div class="section"><h3 class="section-title">Claims List</h3>${printTable(
       ['#','Beneficiary','Medicine','Dosage','Type','Qty','Date','Encoder'],
@@ -443,7 +442,6 @@ function printDeviceClaims(){
       ${printMetaCard('Claim Records',String(rows.length))}
       ${printMetaCard('Beneficiaries',String(new Set(rows.map(r=>r.ben)).size))}
       ${printMetaCard('Total Quantity',String(rows.reduce((a,r)=>a+(Number(r.qty)||0),0)))}
-      ${printMetaCard('On Loan',String(rows.filter(r=>r.claimType==='On Loan').length))}
     </div>
     <div class="section"><h3 class="section-title">Claims List</h3>${printTable(
       ['#','Beneficiary','Device','Category','Qty','Claim Type','Return Date','Date','Encoder'],
